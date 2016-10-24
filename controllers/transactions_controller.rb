@@ -20,6 +20,7 @@ post '/transactions' do
   @transaction.save
  erb :"transactions/create"
 end 
+
 #find
 
 #edit
