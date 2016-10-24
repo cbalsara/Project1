@@ -1,0 +1,10 @@
+<div> 
+<% @categorys.each do |category| %>
+<a href="/categorys/<%= category.id %>"><%= category.type %></a><br><hr>
+<% end %>
+
+<a href="categorys/new"> Choose new category</a><br>
+
+
+
+</div>

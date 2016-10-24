@@ -14,7 +14,7 @@ class Transaction
   def save()
     sql = "INSERT INTO transactions (category_id, merchant_id, cost) VALUES ('#{@category_id}', '#{@merchant_id}', '#{@cost}') RETURNING *"
     transaction = SqlRunner.run(sql).first
-    @id = transaction['id']
+    @id = transaction['id'].to_i
   end 
 
   def category()

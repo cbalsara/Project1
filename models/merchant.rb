@@ -51,7 +51,7 @@ class Merchant
   end 
 
   def self.map_item(sql)
-    result = merchant.map_items(sql)
+    result = Merchant.map_items(sql)
     return result.first
   end
 end 

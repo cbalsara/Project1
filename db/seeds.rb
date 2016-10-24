@@ -1,3 +1,4 @@
+require('pry-byebug')
 require_relative('../models/category')
 require_relative('../models/merchant')
 require_relative('../models/transaction')
@@ -30,15 +31,15 @@ merchant2.save()
 merchant3.save()
 merchant4.save()
 
-transaction1 = Transaction.new({ 'category_id' => category1.id, 'merchant_id' => merchant1.id})
-transaction2 = Transaction.new({ 'category_id' => category2.id, 'merchant_id' => merchant2.id})
-transaction3 = Transaction.new({ 'category_id' => category3.id, 'merchant_id' => merchant1.id})
-transaction4 = Transaction.new({ 'category_id' => category4.id, 'merchant_id' => merchant3.id})
-transaction5 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant4.id})
-transaction6 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant1.id})
-transaction7 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant2.id})
-transaction8 = Transaction.new({ 'category_id' => category2.id, 'merchant_id' => merchant4.id})
-transaction9 = Transaction.new({ 'category_id' => category1.id, 'merchant_id' => merchant2.id})
+transaction1 = Transaction.new({ 'category_id' => category1.id, 'merchant_id' => merchant1.id, 'cost' => 2.99})
+transaction2 = Transaction.new({ 'category_id' => category2.id, 'merchant_id' => merchant2.id, 'cost' => 2.99})
+transaction3 = Transaction.new({ 'category_id' => category3.id, 'merchant_id' => merchant1.id, 'cost' => 2.99})
+transaction4 = Transaction.new({ 'category_id' => category4.id, 'merchant_id' => merchant3.id, 'cost' => 2.99})
+transaction5 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant4.id, 'cost' => 2.99})
+transaction6 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant1.id, 'cost' => 2.99})
+transaction7 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant2.id, 'cost' => 2.99})
+transaction8 = Transaction.new({ 'category_id' => category2.id, 'merchant_id' => merchant4.id, 'cost' => 2.99})
+transaction9 = Transaction.new({ 'category_id' => category1.id, 'merchant_id' => merchant2.id, 'cost' => 2.99})
 
 
 transaction1.save()
@@ -51,6 +52,9 @@ transaction7.save()
 transaction8.save()
 transaction9.save()
 
+
+binding.pry
+nil
 
 
 
