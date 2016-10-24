@@ -36,6 +36,14 @@ class Category
     return result 
   end 
 
+  def update
+    sql = "UPDATE categorys SET 
+      type = '#{ @type }',
+      WHERE id = #{@id};"
+    SqlRunner.run(sql)
+    return nil
+  end
+ 
   def self.map_item(sql)
     result = category.map_items(sql)
     return result.first

@@ -30,6 +30,14 @@ class Merchant
     return Merchant.map_item(sql)
   end 
 
+  def update
+    sql = "UPDATE merchants SET 
+      name = '#{ @name }',
+      WHERE id = #{@id};"
+    SqlRunner.run(sql)
+    return nil
+  end
+
   def self.map_items(sql)
     merchants = SqlRunner.run(sql)
     result = merchants.map{ |merchant| Merchant.new(merchant)}
