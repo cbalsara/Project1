@@ -35,6 +35,10 @@ transaction2 = Transaction.new({ 'category_id' => category2.id, 'merchant_id' =>
 transaction3 = Transaction.new({ 'category_id' => category3.id, 'merchant_id' => merchant1.id})
 transaction4 = Transaction.new({ 'category_id' => category4.id, 'merchant_id' => merchant3.id})
 transaction5 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant4.id})
+transaction6 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant1.id})
+transaction7 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant2.id})
+transaction8 = Transaction.new({ 'category_id' => category2.id, 'merchant_id' => merchant4.id})
+transaction9 = Transaction.new({ 'category_id' => category1.id, 'merchant_id' => merchant2.id})
 
 
 transaction1.save()
@@ -42,6 +46,11 @@ transaction2.save()
 transaction3.save()
 transaction4.save()
 transaction5.save()
+transaction6.save()
+transaction7.save()
+transaction8.save()
+transaction9.save()
+
 
 
 

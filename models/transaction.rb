@@ -47,7 +47,6 @@ class Transaction
     return nil
   end
 
-
   def self.map_items(sql)
     transactions = SqlRunner.run(sql)
     result = transactions.map{ |transaction| Transaction.new(transaction)}

@@ -30,13 +30,19 @@ class Merchant
     return Merchant.map_item(sql)
   end 
 
-  def update
+  def update()
     sql = "UPDATE merchants SET 
       name = '#{ @name }',
       WHERE id = #{@id};"
     SqlRunner.run(sql)
     return nil
   end
+
+#to get back all the different category of items bought from the specific merchant 
+  def categorys()
+  sql = "SELECT categorys.* FROM categorys INNER JOIN transactions ON transactions.category_id = categorys.id WHERE transactions.merchant_id = #{@id};" 
+    return Category.map_items(sql)
+  end 
 
   def self.map_items(sql)
     merchants = SqlRunner.run(sql)
