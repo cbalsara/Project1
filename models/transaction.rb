@@ -37,6 +37,17 @@ class Transaction
     SqlRunner.run(sql)
   end 
 
+  def update
+    sql = "UPDATE transactions SET 
+      category_id = '#{ @category_id }',
+      merchant_id = '#{ @merchant_id}',
+      cost = '#{@cost}',
+      WHERE id = #{@id};"
+    SqlRunner.run(sql)
+    return nil
+  end
+
+
   def self.map_items(sql)
     transactions = SqlRunner.run(sql)
     result = transactions.map{ |transaction| Transaction.new(transaction)}
