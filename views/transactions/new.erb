@@ -1,8 +1,9 @@
-<h2>Please Enter Your Transaction </h2>
+<h2>Please Enter Your Transaction: </h2>
 <form action="/transactions" method = "post" >
 <label for="category"> Category Type:</label>
-<select name="category_id" id="category"
-<% @categorys.each do |category| %>
-<option value="<%= transaction.id %>"> <%= transaction.type %></option>
-<% end %>
+
+<select name="category_id" id="category">
+  <% @categorys.each do |category| %>
+  <option value="<%= category.id %>"> <%= category.type %></option>
+    <% end %>
 </select>

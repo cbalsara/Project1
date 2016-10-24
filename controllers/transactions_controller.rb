@@ -8,6 +8,12 @@ end
 
 #new
 
+get '/transactions/new' do
+  @categorys = Category.all()
+  @merchants = Merchant.all()
+  erb :'transactions/new'
+end 
+
 #create
 
 #find
