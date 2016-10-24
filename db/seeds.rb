@@ -1,7 +1,8 @@
 require_relative('../models/category')
 require_relative('../models/merchant')
-# require_relative('../models/transaction')
+require_relative('../models/transaction')
 
+Transaction.delete_all()
 Category.delete_all()
 Merchant.delete_all()
 
@@ -29,18 +30,18 @@ merchant2.save()
 merchant3.save()
 merchant4.save()
 
-# transaction1 = Transaction.new({ 'category_id' => category1.id, 'merchant_id' => merchant1.id})
-# transaction2 = Transaction.new({ 'category_id' => category2.id, 'merchant_id' => merchant2.id})
-# transaction3 = Transaction.new({ 'category_id' => category3.id, 'merchant_id' => merchant1.id})
-# transaction4 = Transaction.new({ 'category_id' => category4.id, 'merchant_id' => merchant3.id})
-# transaction5 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant4.id})
+transaction1 = Transaction.new({ 'category_id' => category1.id, 'merchant_id' => merchant1.id})
+transaction2 = Transaction.new({ 'category_id' => category2.id, 'merchant_id' => merchant2.id})
+transaction3 = Transaction.new({ 'category_id' => category3.id, 'merchant_id' => merchant1.id})
+transaction4 = Transaction.new({ 'category_id' => category4.id, 'merchant_id' => merchant3.id})
+transaction5 = Transaction.new({ 'category_id' => category5.id, 'merchant_id' => merchant4.id})
 
 
-# transaction1.save()
-# transaction2.save()
-# transaction3.save()
-# transaction4.save()
-# transaction5.save()
+transaction1.save()
+transaction2.save()
+transaction3.save()
+transaction4.save()
+transaction5.save()
 
 
 
