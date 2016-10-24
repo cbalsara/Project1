@@ -15,9 +15,19 @@ class Category
     @id = category['id'].to_i
   end 
 
+  def self.delete_all()
+    sql = "DELETE FROM categorys"
+    SqlRunner.run(sql)
+  end 
+
   def self.all()
     sql = "SELECT * FROM categorys"
     return Category.map_items(sql)
+  end 
+
+  def self.find(id)
+    sql = "SELECT * FROM categorys WHERE id = #{id}"
+    return Category.map_item(sql)
   end 
 
   def self.map_items(sql)

@@ -2,6 +2,9 @@ require_relative('../models/category')
 # require_relative('../models/merchant')
 # require_relative('../models/transaction')
 
+Category.delete_all()
+
+
 category1 = Category.new({ 'type' => 'household'})
 category2 = Category.new({ 'type' => 'food'})
 category3 = Category.new({ 'type' => 'drink'})
