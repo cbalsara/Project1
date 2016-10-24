@@ -1,8 +1,9 @@
 require_relative('../models/category')
-# require_relative('../models/merchant')
+require_relative('../models/merchant')
 # require_relative('../models/transaction')
 
 Category.delete_all()
+Merchant.delete_all()
 
 
 category1 = Category.new({ 'type' => 'household'})
@@ -18,15 +19,15 @@ category4.save()
 category5.save()
 
 
-# merchant1 = Merchant.new({ 'name' => 'Sainsburys'})
-# merchant2 = Merchant.new({ 'name' => 'Tesco'})
-# merchant3 = Merchant.new({ 'name' => 'Garage'})
-# merchant4 = Merchant.new({ 'name' => 'Ocean Terminal'})
+merchant1 = Merchant.new({ 'name' => 'Sainsburys'})
+merchant2 = Merchant.new({ 'name' => 'Tesco'})
+merchant3 = Merchant.new({ 'name' => 'Garage'})
+merchant4 = Merchant.new({ 'name' => 'Ocean Terminal'})
 
-# merchant1.save()
-# merchant2.save()
-# merchant3.save()
-# merchant4.save()
+merchant1.save()
+merchant2.save()
+merchant3.save()
+merchant4.save()
 
 # transaction1 = Transaction.new({ 'category_id' => category1.id, 'merchant_id' => merchant1.id})
 # transaction2 = Transaction.new({ 'category_id' => category2.id, 'merchant_id' => merchant2.id})
