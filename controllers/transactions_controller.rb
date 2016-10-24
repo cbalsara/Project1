@@ -19,7 +19,6 @@ post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save
  erb :"transactions/create"
-
 end 
 #find
 
