@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry-byebug')
 
 class Category
 
@@ -18,6 +19,13 @@ class Category
   def self.delete_all()
     sql = "DELETE FROM categorys"
     SqlRunner.run(sql)
+  end 
+
+  def specific_total()
+    sql = " SELECT SUM(cost) FROM transactions WHERE category_id = #{@id} "
+    total = SqlRunner.run(sql).first
+    # binding.pry
+        return total['sum'].to_f
   end 
 
   def self.all()

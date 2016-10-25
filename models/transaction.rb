@@ -36,6 +36,9 @@ class Transaction
     return total.to_i
   end 
 
+  #insert a method that returns the total cost of all the prices for items corrosponding with each categorys id
+ 
+
   def self.all()
     sql = "SELECT * FROM transactions"
     return Transaction.map_items(sql)
