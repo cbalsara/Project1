@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 
+
 class Transaction 
 
     attr_reader :id, :category_id, :merchant_id, :cost
@@ -8,7 +9,7 @@ class Transaction
     @id = options['id'].to_i
     @category_id = options['category_id'].to_i
     @merchant_id = options['merchant_id'].to_i
-    @cost = options['cost']
+    @cost = options['cost'].to_f
   end 
 
   def save()
@@ -27,21 +28,13 @@ class Transaction
     return Merchant.map_item(sql)
   end 
 
-  # def cost()
-  #   sql = "SELECT * FROM transactions WHERE cost = #{@cost}"
-  #   SqlRunner.run(sql)
-  #   return cost
-  # end 
-
-  def total_cost()
+  def self.total_cost()
     total = 0
-    Transaction.all.each do |transaction|
+   Transaction.all.each do |transaction|
       total += transaction.cost
     end
-    return total
+    return total.to_i
   end 
-
- 
 
   def self.all()
     sql = "SELECT * FROM transactions"

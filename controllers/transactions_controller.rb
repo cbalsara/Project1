@@ -3,6 +3,7 @@ require_relative('../models/transaction.rb')
 #index
 get '/transactions' do
   @transactions = Transaction.all()
+  @total = Transaction.total_cost()
   erb :'transactions/index'
 end  
 
@@ -24,6 +25,7 @@ end
 #find/show
   get '/transactions/:id' do 
     @transaction = Transaction.find(params['id'])
+    @total = Transaction.total_cost()
     erb(:'transactions/show')
   end 
 

@@ -1,12 +1,7 @@
 <div>
   <h2> You are now viewing your selected bill </h2>
   
-    
-    
-
-  <!-- clicking on the category will take you to the page with the categories information  -->
-
-
+  
   <!-- Want to show all the the transactions of the category clicked -->
     <h3> Transactions Below:</h3>
 
@@ -15,8 +10,8 @@
       <a href="/transactions/<%= transaction.id%>">Click for more details</a>
       <%= transaction.cost %> 
     <% end  %> 
+  
+<!-- need to insert a total cost here for only each item by its id  -->
 
-
-<!-- need to insert a total cost here -->
-
+<h4>Total Cost: <%= @total %></h4>
 </div>

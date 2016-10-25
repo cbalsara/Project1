@@ -20,6 +20,7 @@ post '/categorys' do
 #find/show
 get '/categorys/:id' do
   @category = Category.find(params['id'])
+  @total = Transaction.total_cost()
   erb(:'categorys/show')
   end 
 
