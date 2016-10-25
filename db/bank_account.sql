@@ -16,5 +16,5 @@ CREATE TABLE transactions (
   id serial4 PRIMARY KEY,
   category_id int4 REFERENCES categorys(id),
   merchant_id int4 REFERENCES merchants(id),
-  cost MONEY
+  cost DECIMAL(6,2)
 );

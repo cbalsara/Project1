@@ -1,7 +1,9 @@
 <div>
   <% @transactions.each do |transaction| %>
-  Category: <%= transaction.category.type  %> - Merchant: <%= transaction.merchant.name  %><br><hr>
+  Category: <%= transaction.category.type  %> - Merchant: <%= transaction.merchant.name %> - Total Bill: <%= transaction.cost %> <br><hr>
   <% end %>
+
+  <!-- need to insert an overall cost here -->
   <a href="/">Home</a>
   </div>
  
