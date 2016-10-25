@@ -21,7 +21,13 @@ post '/transactions' do
  erb :"transactions/create"
 end 
 
-#find
+#find/show
+  get '/transactions/:id' do 
+    @transaction = Transaction.find(params['id'])
+    erb(:'transactions/show')
+  end 
+
+  
 
 #edit
 
