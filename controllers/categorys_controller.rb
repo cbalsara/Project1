@@ -25,6 +25,9 @@ get '/categorys/:id' do
 
 #edit
 
-#update
+#update<h3> All Transactions of Clicked Category:</h3>
+
+
+  
 
 #delete

@@ -27,6 +27,12 @@ class Transaction
     return Merchant.map_item(sql)
   end 
 
+  def cost()
+    sql = "SELECT * FROM transactions WHERE cost = #{@cost}"
+    result = SqlRunner.run(sql)
+    return result 
+  end 
+
   def self.all()
     sql = "SELECT * FROM transactions"
     return Transaction.map_items(sql)

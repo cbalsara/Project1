@@ -43,11 +43,17 @@ class Category
     SqlRunner.run(sql)
     return nil
   end
-  #to get back all the different merchants who hold a specifically chosen item 
+  # to get back all the different merchants who hold a specifically chosen item 
   # def merchants
   #   sql = "SELECT merchants.* FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id WHERE transactions.category_id = #{@id};" 
   #     return Merchant.map_items(sql)
-  # end
+  # end 
+
+  def transactions
+    sql = "SELECT * FROM transactions WHERE category_id = #{@id}"
+    result = Transaction.map_items(sql)
+    return result    
+  end 
  
   def self.map_item(sql)
     result = Category.map_items(sql)
