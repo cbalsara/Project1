@@ -21,12 +21,16 @@ class Category
     SqlRunner.run(sql)
   end 
 
+  
+  #insert a method that returns the total cost of all the prices for items corrosponding with each categorys id
   def specific_total()
     sql = " SELECT SUM(cost) FROM transactions WHERE category_id = #{@id} "
     total = SqlRunner.run(sql).first
     # binding.pry
         return total['sum'].to_f
   end 
+#this was needed for the specific totals in each category 
+  
 
   def self.all()
     sql = "SELECT * FROM categorys"

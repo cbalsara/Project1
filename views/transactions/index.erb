@@ -4,7 +4,8 @@
   <% end %>
 
   <!-- need to insert an overall cost method here -->
-  Total Amount Spent: <%= @total %>
+  <!-- we can use the @total as it has the .total_cost method -->
+  Total Amount Spent: <%= @total.to_f %>
   
   <a href="/">Home</a>
   </div>

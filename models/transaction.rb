@@ -27,17 +27,15 @@ class Transaction
     sql = "SELECT * FROM merchants WHERE id = #{@merchant_id}"
     return Merchant.map_item(sql)
   end 
-
+      #if it is a self method, we can then add it to a new transaction object
   def self.total_cost()
     total = 0
    Transaction.all.each do |transaction|
       total += transaction.cost
     end
-    return total.to_i
+    #remember to return it as in integer!!!!!!!!!!
+    return total.to_f
   end 
-
-  #insert a method that returns the total cost of all the prices for items corrosponding with each categorys id
- 
 
   def self.all()
     sql = "SELECT * FROM transactions"
