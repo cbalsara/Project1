@@ -1,8 +1,11 @@
 
   <div>
-  <h1><%= @transaction.merchant.name %></h1>
-  <h2><%= @transaction.category.type %></h2>
-  <h3><%= @transaction.cost %> </h3>
+  <h2> <em> Purchase made at: </em></h2>
+  <h4><%= @transaction.merchant.name %></h4>
+  <h2> <em> Type of purchase:</em> </h2>
+  <h4><%= @transaction.category.type %></h4>
+  <h2><em> Total cost:</em> </h2>
+  <h4><%= '%.2f' % (@transaction.cost) %> </h4>
 
   <a href="/categories">Back</a>
   <br>
