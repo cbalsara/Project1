@@ -29,7 +29,7 @@ class Merchant
     sql = "SELECT * FROM merchants WHERE id = #{id}"
     return Merchant.map_item(sql)
   end 
-
+#for the delete route
   def self.destory(id)
    sql = "DELETE FROM merchants WHERE id = #{id}"
    SqlRunner.run(sql)

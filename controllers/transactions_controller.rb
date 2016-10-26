@@ -46,7 +46,7 @@ put '/transactions/:id' do
 end 
 
 #delete
-delete '/transctions/:id' do
+delete '/transactions/:id' do
   Transaction.destory(params[:id])
   redirect to("/transactions")
 end 

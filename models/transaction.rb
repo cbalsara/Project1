@@ -37,7 +37,7 @@ class Transaction
     return total.to_f
   end 
 
-  def self.update
+  def self.update(options)
     sql = "UPDATE transactions SET
             category_id='#{options['category_id']}',
             merchant_id='#{options['merchant_id']}',
@@ -46,6 +46,7 @@ class Transaction
     SqlRunner.run(sql)
   end 
 
+  #for the delete route
   def self.destory(id)
    sql = "DELETE FROM transactions WHERE id = #{id}"
    SqlRunner.run(sql)

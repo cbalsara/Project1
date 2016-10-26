@@ -1,18 +1,18 @@
 <div>
-  <h1> You are now viewing your selected bill for: </h1>
+  <h2> You are now viewing your selected bill for: </h2>
 
-  <h2><%= @category.type %></h2>
+  <h3><%= @category.type %></h3>
 
   
   <!-- Want to show all the the transactions of the category clicked -->
-    <h3> Transactions Below:</h3>
+    <h4> Transactions Below:</h4>
 
 
     <% @category.transactions.each do |transaction| %>
     <ul>
     <li>
-      <a href="/transactions/<%= transaction.id%>">Click for more details</a>
-      <%= transaction.cost %> 
+      <a href="/transactions/<%= transaction.id%>">purchase info</a> 
+      <%= '%.2f' % (transaction.cost) %> <hr>
       </li>
       </ul>
     <% end  %> 
@@ -21,18 +21,15 @@
 <h4>Total Amount: </h4>
 
 <%=@category.specific_total%>
-<br>
-<br>
 
-<a href="/categories/<%= @category.id %>/edit">Edit Category</a>
 
 <br>
-
 <form action="/categories/<%= @category.id %>" method="post">
-  <input type="submit" value="Click To Delete">
+  <input type="submit" value="Click To Delete Transaction">
   <input name="_method" type="hidden" value="delete"/>
 </form>
-
+<br>
+<a href="/categories/<%= @category.id %>/edit">Edit Category</a>
 <br>
 
 <a href="/categories">Back</a>
