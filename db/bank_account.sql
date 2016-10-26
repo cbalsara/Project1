@@ -2,7 +2,7 @@ DROP TABLE transactions;
 DROP TABLE items;
 DROP TABLE stores;
 
-CREATE TABLE categorys (
+CREATE TABLE categories (
   id serial4 PRIMARY KEY,
   type VARCHAR(255)
 );
@@ -14,7 +14,7 @@ CREATE TABLE merchants (
 
 CREATE TABLE transactions (
   id serial4 PRIMARY KEY,
-  category_id int4 REFERENCES categorys(id),
-  merchant_id int4 REFERENCES merchants(id),
+  category_id int4 REFERENCES categories(id) ON DELETE CASCADE,
+  merchant_id int4 REFERENCES merchants(id) ON DELETE CASCADE,
   cost DECIMAL(6,2)
 );

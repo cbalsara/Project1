@@ -10,7 +10,7 @@ end
 #new
 
 get '/transactions/new' do
-  @categorys = Category.all()
+  @categories = Category.all()
   @merchants = Merchant.all()
   erb :'transactions/new'
 end 
@@ -29,10 +29,24 @@ end
     erb(:'transactions/show')
   end 
 
-  
-
 #edit
+get '/transactions/:id/edit' do
+  @transaction = Transaction.find(params[:id])
+  @categories = Category.all
+  @merchants = Merchant.all
+  # get all the categories save into a variable @categories
+  # get all the merchants save into a variable @merchants
+  erb(:'transactions/edit')
+end 
 
 #update
+put '/transactions/:id' do
+  @transaction = Transaction.update(params)
+  redirect to("/transactions/#{params[:id]}")
+end 
+
+
+
+
 
 #delete

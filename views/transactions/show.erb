@@ -1,7 +1,13 @@
 
-  <h2><%= @transaction.merchant.name %></h2>
-  <h4><%= @transaction.category.type %></h4>
-  <h5><%= @transaction.cost %> </h5>
+  <h1><%= @transaction.merchant.name %></h1>
+  <h2><%= @transaction.category.type %></h2>
+  <h3><%= @transaction.cost %> </h3>
+
+  <a href="/categories">Back</a>
+  <br>
+  <a href="/transactions/<%= @transaction.id %>/edit">Edit</a>
+  <br>
+  <a href="/">Home</a>
 
   
 

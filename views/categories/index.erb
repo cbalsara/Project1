@@ -1,0 +1,12 @@
+<div> 
+<% @categories.each do |category| %>
+<a href="/categories/<%= category.id %>"><%= category.type %></a><br><hr>
+<% end %>
+
+
+<a href="categories/new"> Create a new category?</a>
+<br>
+
+<a href="/">Home</a>
+
+</div>

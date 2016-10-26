@@ -3,7 +3,7 @@
 <label for="category"> Category Type:</label>
 
 <select name="category_id" id="category">
-  <% @categorys.each do |category| %>
+  <% @categories.each do |category| %>
   <option value="<%= category.id %>"> <%= category.type %></option>
     <% end %>
 </select>
@@ -25,8 +25,8 @@
   <!-- that stupid bloody 'cost' was named something else and that threw the whole thing into chaos!!!!!!!!! -->
 
   <input type ="submit" value="Submit New Transaction">
-
-  <a href="/transactions">return to transactions</a>
+  <br>
+  <a href="/transactions">Go straight to transaction history?</a>
 
   </form>
   

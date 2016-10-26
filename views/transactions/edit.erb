@@ -1,0 +1,31 @@
+<h3>Edit A Transaction: </h3>
+
+<form action="/transactions/<%=@transaction.id %>" method = "post" >
+
+  <label for="category"> Category Type:</label>
+  <select name="category_id" id="category">
+    <% @categories.each do |category| %>
+      <option value="<%= category.id %>" <%= 'selected' if @transaction.category_id == category.id %> > <%= category.type %></option>  
+      <!-- inside option tag determine if category.id == @transaction.category_id -->
+      <!-- if it matches, make this option tag the selected one -->
+    <% end %>
+  </select>
+<br>
+  
+  <label for ="merchant">Merchant Name:</label>
+  <select name ="merchant_id" id="merchant">
+    <% @merchants.each do |merchant| %>
+      <option value ="<%= merchant.id %>"<%= 'selected' if @transaction.merchant_id == merchant.id %> > <%= merchant.name %></option> 
+    <% end %>
+  </select>
+
+  <br>
+
+  <label for="transaction">Total Amount:</label>
+  <input type="text" name="cost" value="<%=@transaction.cost %>"><br>
+ 
+  <input type="hidden" name="_method" value="put">
+  <input type ="submit" value="Submit New Transaction">
+  <br>
+  <a href="/transactions">Go straight to transaction history?</a>
+</form>

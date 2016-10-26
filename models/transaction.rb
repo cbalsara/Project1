@@ -19,7 +19,7 @@ class Transaction
   end 
 
   def category()
-    sql = "SELECT * FROM categorys WHERE id = #{@category_id}"
+    sql = "SELECT * FROM categories WHERE id = #{@category_id}"
     return Category.map_item(sql)
   end 
 
@@ -36,6 +36,17 @@ class Transaction
     #remember to return it as in integer!!!!
     return total.to_f
   end 
+
+  def self.update
+    sql = "UPDATE transactions SET
+            category_id='#{options['category_id']}',
+            merchant_id='#{options['merchant_id']}',
+            cost ='#{options['cost']}'
+            WHERE id='#{options['id']}'"
+    SqlRunner.run(sql)
+  end 
+
+
 
   def self.all()
     sql = "SELECT * FROM transactions"

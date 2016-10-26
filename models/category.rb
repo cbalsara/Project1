@@ -11,13 +11,13 @@ class Category
   end 
 
   def save()
-    sql = "INSERT INTO categorys (type) VALUES ('#{@type}') RETURNING *"
+    sql = "INSERT INTO categories (type) VALUES ('#{@type}') RETURNING *"
     category = SqlRunner.run(sql).first
     @id = category['id'].to_i
   end 
 
   def self.delete_all()
-    sql = "DELETE FROM categorys"
+    sql = "DELETE FROM categories"
     SqlRunner.run(sql)
   end 
 
@@ -31,31 +31,37 @@ class Category
 #this was needed for the specific totals in each category 
 
 
+#needed for the destory method in the controller
+  def self.destory(id)
+   sql = "DELETE FROM categories WHERE id = #{id}"
+   SqlRunner.run(sql)
+  end 
+
   def self.all()
-    sql = "SELECT * FROM categorys"
+    sql = "SELECT * FROM categories"
     return Category.map_items(sql)
   end 
 
   def self.find(id)
-    sql = "SELECT * FROM categorys WHERE id = #{id}"
+    sql = "SELECT * FROM categories WHERE id = #{id}"
     return Category.map_item(sql)
   end 
 
   def self.map_items(sql)
-    categorys = SqlRunner.run(sql)
-    result = categorys.map{ |category| Category.new(category)}
+    categories = SqlRunner.run(sql)
+    result = categories.map{ |category| Category.new(category)}
     return result 
   end 
       #for the update method in the controller 
   def self.update(options)
-      sql = "UPDATE categorys SET 
+      sql = "UPDATE categories SET 
       type = '#{options['type']}'
       WHERE id='#{options['id']}'"
     SqlRunner.run(sql)
   end 
 
   def update
-    sql = "UPDATE categorys SET 
+    sql = "UPDATE categories SET 
       type = '#{ @type }',
       WHERE id = #{@id};"
     SqlRunner.run(sql)

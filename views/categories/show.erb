@@ -1,0 +1,40 @@
+<div>
+  <h1> You are now viewing your selected bill for: </h1>
+
+  <h2><%= @category.type %></h2>
+
+  
+  <!-- Want to show all the the transactions of the category clicked -->
+    <h3> Transactions Below:</h3>
+
+
+    <% @category.transactions.each do |transaction| %>
+    <ul>
+    <li>
+      <a href="/transactions/<%= transaction.id%>">Click for more details</a>
+      <%= transaction.cost %> 
+      </li>
+      </ul>
+    <% end  %> 
+<!-- need to insert a total cost here for only each item by its id  -->
+
+<h4>Total Amount: </h4>
+
+<%=@category.specific_total%>
+<br>
+<br>
+
+<a href="/categories/<%= @category.id %>/edit">Edit Category</a>
+
+<br>
+
+<form action="/categories/<%= @category.id %>" method="post">
+  <input type="submit" value="Click To Delete">
+  <input name="_method" type="hidden" value="delete"/>
+</form>
+
+<br>
+
+<a href="/categories">Back</a>
+
+</div>

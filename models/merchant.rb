@@ -47,7 +47,7 @@ class Merchant
 
 #to get back all the different category of items bought from the specific merchant 
   def categorys()
-  sql = "SELECT categorys.* FROM categorys INNER JOIN transactions ON transactions.category_id = categorys.id WHERE transactions.merchant_id = #{@id};" 
+  sql = "SELECT categories.* FROM categories INNER JOIN transactions ON transactions.category_id = categories.id WHERE transactions.merchant_id = #{@id};" 
     return Category.map_items(sql)
   end 
 
