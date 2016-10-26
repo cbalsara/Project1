@@ -49,7 +49,7 @@ class Category
       #for the update method in the controller 
   def self.update(options)
       sql = "UPDATE categorys SET 
-      type = '#{options['type']}',
+      type = '#{options['type']}'
       WHERE id='#{options['id']}'"
     SqlRunner.run(sql)
   end 
