@@ -34,6 +34,9 @@ put '/merchants/:id' do
   redirect to ("merchants/#{params[:id]}")
 end 
 #delete
-
+delete '/merchants/:id' do
+  Merchant.destory(params[:id])
+  redirect to("/merchants")
+end 
 
 

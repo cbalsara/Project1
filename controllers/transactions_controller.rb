@@ -45,8 +45,4 @@ put '/transactions/:id' do
   redirect to("/transactions/#{params[:id]}")
 end 
 
-
-
-
-
 #delete

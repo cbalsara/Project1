@@ -3,5 +3,10 @@
   
   <a href="/merchants/<%= @merchant.id %>/edit">Edit Merchant Name</a>
   <br>
+  <form action="/merchants/<%= @merchant.id %>" method="post">
+    <input type="submit" value="Click To Delete">
+    <input name="_method" type="hidden" value="delete"/>
+  </form>
+  <br>
   <a href="/merchants">Back</a>
 </div>
