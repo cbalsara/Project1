@@ -1,0 +1,16 @@
+<h2> Edit A Category</h2>
+
+<form action="/categorys/<%=@category.id %>" method="post">
+
+  <label for="category">Category Type:</label>
+  <input type="text" name="type" value="<%=@category.type %>">
+
+  <br> 
+ 
+  <input type="hidden" name="_method" value="put">
+  <input type="submit" value ="Click to update new category">
+  </form>
+
+  <br>
+  <br>
+  <a href="/categorys">Back</a>

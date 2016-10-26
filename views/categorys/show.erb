@@ -10,12 +10,17 @@
       <a href="/transactions/<%= transaction.id%>">Click for more details</a>
       <%= transaction.cost %> 
     <% end  %> 
+
+
   
 <!-- need to insert a total cost here for only each item by its id  -->
+
 
 <h4>Total Cost For Category: </h4>
 
 <%=@category.specific_total%>
 
+
+<a href="/categorys/<%= @category.id %>/edit">Edit Transaction</a>
 
 </div>

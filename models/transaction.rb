@@ -33,7 +33,7 @@ class Transaction
    Transaction.all.each do |transaction|
       total += transaction.cost
     end
-    #remember to return it as in integer!!!!!!!!!!
+    #remember to return it as in integer!!!!
     return total.to_f
   end 
 

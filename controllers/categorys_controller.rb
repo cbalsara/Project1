@@ -24,10 +24,17 @@ get '/categorys/:id' do
   end 
 
 #edit
+get '/categorys/:id/edit' do
+  @category = Category.find(params[:id])
+  erb(:'categorys/edit')
+  end 
 
 #update
+put '/categorys/:id' do
+  @category = Category.update(params)
+  redirect to( "/categorys/#{params[:id]}" )
+end 
 
-
-  
 
 #delete
+

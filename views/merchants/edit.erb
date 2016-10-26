@@ -1,0 +1,15 @@
+<h3> Please Edit A Merchant</h3>
+
+<form action="/merchants/<%=@merchant.id %>" method="post">
+
+<label for="merchant">Name of Merchant:</label>
+<input type="text" name="name" value="<%@merchant.name %>">
+<br>
+
+<input type="hidden" name="_method" value="put">
+<input type="submit" value ="Click to update merchant">
+</form>
+
+<br>
+<br>
+<a href="/merchants">Back</a>

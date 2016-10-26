@@ -21,7 +21,6 @@ class Category
     SqlRunner.run(sql)
   end 
 
-  
   #insert a method that returns the total cost of all the prices for items corrosponding with each categorys id
   def specific_total()
     sql = " SELECT SUM(cost) FROM transactions WHERE category_id = #{@id} "
@@ -30,7 +29,7 @@ class Category
         return total['sum'].to_f
   end 
 #this was needed for the specific totals in each category 
-  
+
 
   def self.all()
     sql = "SELECT * FROM categorys"
@@ -46,6 +45,13 @@ class Category
     categorys = SqlRunner.run(sql)
     result = categorys.map{ |category| Category.new(category)}
     return result 
+  end 
+      #for the update method in the controller 
+  def self.update(options)
+      sql = "UPDATE categorys SET 
+      type = '#{options['type']}',
+      WHERE id='#{options['id']}'"
+    SqlRunner.run(sql)
   end 
 
   def update
