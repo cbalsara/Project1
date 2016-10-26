@@ -30,6 +30,11 @@ class Merchant
     return Merchant.map_item(sql)
   end 
 
+  def self.destory(id)
+   sql = "DELETE FROM merchants WHERE id = #{id}"
+   SqlRunner.run(sql)
+  end
+
   def self.update(options)
     sql = "UPDATE merchants SET 
     name = '#{options['name']}'

@@ -46,7 +46,10 @@ class Transaction
     SqlRunner.run(sql)
   end 
 
-
+  def self.destory(id)
+   sql = "DELETE FROM transactions WHERE id = #{id}"
+   SqlRunner.run(sql)
+  end
 
   def self.all()
     sql = "SELECT * FROM transactions"
