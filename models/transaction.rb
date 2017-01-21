@@ -37,6 +37,8 @@ class Transaction
     return total.to_f
   end 
 
+
+  #for the update method in the controller 
   def self.update(options)
     sql = "UPDATE transactions SET
             category_id='#{options['category_id']}',

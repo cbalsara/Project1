@@ -35,6 +35,7 @@ class Merchant
    SqlRunner.run(sql)
   end
 
+  #for the update method in the controller 
   def self.update(options)
     sql = "UPDATE merchants SET 
     name = '#{options['name']}'
