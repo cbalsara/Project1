@@ -1,8 +1,9 @@
 <h3>Please Enter Your Transaction: </h3>
 <form action="/transactions" method = "post" >
-<label for="category"> Category Type:</label>
 
+<label for="category"> Category Type:</label>
 <select name="category_id" id="category">
+<option value= '' disabled selected> Category List</option>
   <% @categories.each do |category| %>
   <option value="<%= category.id %>"> <%= category.type %></option>
     <% end %>
@@ -12,6 +13,7 @@
 
   <label for ="merchant">Merchant Name:</label>
   <select name ="merchant_id" id="merchant">
+  <option value= '' disabled selected> Merchant List</option>
   <% @merchants.each do |merchant| %>
     <option value ="<%= merchant.id %>"> <%= merchant.name %></option>
     <% end %>
@@ -21,7 +23,7 @@
 
   <label for="transaction">Total Amount:</label>
   <input type="text" name="cost"><br>
-  <!-- that stupid bloody 'cost' was named something else and that threw the whole thing into chaos!!!!!!!!! -->
+  <!-- that stupid 'cost' was named something else and that threw the whole thing into chaos!!!!!!!!! -->
 
   <input type ="submit" value="Submit New Transaction">
   <br>

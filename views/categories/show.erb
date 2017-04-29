@@ -8,13 +8,13 @@
     <h4> Transactions Below:</h4>
 
 
-    <% @category.transactions.each do |transaction| %>
+    <% @category.transactions.each do |transaction|%>
     <ul>
-    <li>
-      <a href="/transactions/<%= transaction.id%>">purchase info</a> 
-      <%= '%.2f' % (transaction.cost) %> <hr>
+      <li>
+        <a href="/transactions/<%= transaction.id%>">purchase info</a> 
+        <%= '%.2f' % (transaction.cost) %> <hr>
       </li>
-      </ul>
+    </ul>
     <% end  %> 
 <!-- need to insert a total cost here for only each item by its id  -->
 
